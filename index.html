@@ -13,13 +13,13 @@
 <style>
 /* Layout: una sola columna estrecha, como un grimorio; el ojo abre la página y todo desciende desde él. Tema oscuro único, a propósito. */
 :root {
-  --bg: #1b1220;          /* berenjena: oscuro pero no negro */
-  --bg-raise: #261a2d;    /* superficie levemente elevada, violeta */
-  --ink: #f1eae3;         /* hueso */
-  --muted: #b3a6b6;       /* malva ceniza */
-  --silver: #d6cbe0;      /* plata lila: el acento */
-  --wine: #6e1f3a;        /* bordó */
-  --violet: #4b2a6b;      /* violeta profundo */
+  --bg: #1a0824;          /* violeta oscuro intenso */
+  --bg-raise: #2a0f36;    /* superficie elevada, violeta */
+  --ink: #f3ebe4;         /* hueso */
+  --muted: #bba7c2;       /* malva */
+  --silver: #dccde6;      /* plata lila: el acento */
+  --wine: #7a1838;        /* burdeos */
+  --violet: #4e1878;      /* violeta intenso */
   --line: rgba(214, 203, 224, 0.2);
   --font-display: "Cormorant Garamond", "Garamond", "Times New Roman", serif;
   --font-label: "Cinzel", "Trajan Pro", "Times New Roman", serif;
@@ -35,7 +35,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  background: linear-gradient(180deg, #2a1636 0%, var(--bg) 35%, #241020 70%, var(--bg) 100%);
+  background: linear-gradient(180deg, #2e0c40 0%, var(--bg) 30%, #33091f 60%, #22082e 80%, #300a1d 100%);
   background-color: var(--bg);
   color: var(--ink);
   font-family: var(--font-body);
@@ -50,9 +50,9 @@ body::after { /* bruma de fondo */
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(60vmax 40vmax at 50% -10%, rgba(110, 31, 58, 0.6), transparent 70%),
-    radial-gradient(45vmax 35vmax at 0% 60%, rgba(75, 42, 107, 0.45), transparent 70%),
-    radial-gradient(40vmax 30vmax at 100% 100%, rgba(110, 31, 58, 0.4), transparent 70%);
+    radial-gradient(60vmax 40vmax at 50% -10%, rgba(122, 24, 56, 0.65), transparent 70%),
+    radial-gradient(45vmax 35vmax at 0% 60%, rgba(78, 24, 120, 0.55), transparent 70%),
+    radial-gradient(40vmax 30vmax at 100% 100%, rgba(122, 24, 56, 0.5), transparent 70%);
   animation: bruma 18s ease-in-out infinite alternate;
   z-index: 0;
 }
@@ -339,6 +339,30 @@ ol.steps li::marker { font-family: var(--font-label); color: var(--silver); }
     </div>
   </section>
 
+  <!-- TESTIMONIOS (subidos: la prueba va antes de la oferta) -->
+  <section class="stack">
+    <span class="label">Lo que me escriben</span>
+    <blockquote>
+      <p>Es la primera vez que algo me funciona tan rápido y fácil. Todo sucedió exactamente, hasta el banco donde me visualizaba estuvo libre.</p>
+      <footer>Sobre un parcial que le costó años aprobar</footer>
+    </blockquote>
+    <div class="shots">
+      <figure>
+        <img src="testimonios/parcial.jpg" width="640" height="775" alt="Mensaje: pude aprobar la materia que me costó años sacar, con tu técnica de visualización. Todo sucedió exactamente.">
+        <figcaption>El parcial</figcaption>
+      </figure>
+      <figure>
+        <img src="testimonios/viaje.jpg" width="640" height="1108" alt="Foto de una vista al mar desde un balcón, con el mensaje: vengo a dar testimonio de mi viaje a Estados Unidos. Todo lo que hice fue aplicar la visualización.">
+        <figcaption>Vivir del baile</figcaption>
+      </figure>
+      <figure>
+        <img src="testimonios/ps5.jpg" width="640" height="414" alt="Mensaje: visualicé la realidad donde tenía una PS5, teniendo 0 dólares, y en una semana mi papá me la regaló.">
+        <figcaption>Una visualización</figcaption>
+      </figure>
+    </div>
+    <p class="fineprint">Capturas reales de mensajes que recibí. Quité nombres y fotos para cuidar la privacidad de cada persona.</p>
+  </section>
+
   <!-- QUÉ VAS A ENCONTRAR -->
   <section class="stack" id="comunidad">
     <span class="label">Qué vas a encontrar</span>
@@ -367,6 +391,7 @@ ol.steps li::marker { font-family: var(--font-label); color: var(--silver); }
         <p>Un entorno seguro y afín, para que no transites este cambio en soledad.</p>
       </div>
     </div>
+    <a class="btn" href="#sumarme" style="align-self: center;">Quiero entrenar</a>
   </section>
 
   <!-- FUNDAMENTO -->
@@ -382,30 +407,6 @@ ol.steps li::marker { font-family: var(--font-label); color: var(--silver); }
       <span>Principios herméticos</span>
       <span>Un Curso de Milagros</span>
     </div>
-  </section>
-
-  <!-- TESTIMONIOS -->
-  <section class="stack">
-    <span class="label">Lo que me escriben</span>
-    <blockquote>
-      <p>Es la primera vez que algo me funciona tan rápido y fácil. Todo sucedió exactamente, hasta el banco donde me visualizaba estuvo libre.</p>
-      <footer>Sobre un parcial que le costó años aprobar</footer>
-    </blockquote>
-    <div class="shots">
-      <figure>
-        <img src="testimonios/parcial.jpg" width="640" height="775" alt="Mensaje: pude aprobar la materia que me costó años sacar, con tu técnica de visualización. Todo sucedió exactamente.">
-        <figcaption>El parcial</figcaption>
-      </figure>
-      <figure>
-        <img src="testimonios/viaje.jpg" width="640" height="1108" alt="Foto de una vista al mar desde un balcón, con el mensaje: vengo a dar testimonio de mi viaje a Estados Unidos. Todo lo que hice fue aplicar la visualización.">
-        <figcaption>Vivir del baile</figcaption>
-      </figure>
-      <figure>
-        <img src="testimonios/ps5.jpg" width="640" height="414" alt="Mensaje: visualicé la realidad donde tenía una PS5, teniendo 0 dólares, y en una semana mi papá me la regaló.">
-        <figcaption>Una visualización</figcaption>
-      </figure>
-    </div>
-    <p class="fineprint">Capturas reales de mensajes que recibí. Quité nombres y fotos para cuidar la privacidad de cada persona.</p>
   </section>
 
   <!-- PRECIO -->
@@ -467,6 +468,31 @@ ol.steps li::marker { font-family: var(--font-label); color: var(--silver); }
     </div>
     <a class="ghost" href="https://wa.link/4g3qh7" target="_blank" rel="noopener">Enviar comprobante por WhatsApp →</a>
     <p class="fineprint">La sesión es un espacio de acompañamiento y orientación. No reemplaza la ayuda médica ni psicológica.</p>
+  </section>
+
+  <!-- PREGUNTAS FRECUENTES -->
+  <section class="stack">
+    <span class="label">Preguntas frecuentes</span>
+    <details>
+      <summary>¿Y si no puedo estar en vivo el domingo?</summary>
+      <div class="inner"><p>Todos los encuentros quedan grabados en Patreon. Los ves cuando puedas y me dejás tus preguntas para el domingo de preguntas.</p></div>
+    </details>
+    <details>
+      <summary>¿Cómo pago desde Argentina?</summary>
+      <div class="inner"><p>Desde Patreon, con tarjeta o PayPal. El cobro es en dólares, así que tu banco puede sumar impuestos. Si usás iPhone, sumate desde el navegador para evitar el recargo de Apple.</p></div>
+    </details>
+    <details>
+      <summary>¿Puedo cancelar cuando quiera?</summary>
+      <div class="inner"><p>Sí. Sin permanencia: cancelás desde Patreon en dos clics.</p></div>
+    </details>
+    <details>
+      <summary>¿Me sirve si nunca manifesté nada?</summary>
+      <div class="inner"><p>Sí. Empezamos por entender cómo funciona tu subconsciente, así que no necesitás experiencia previa. Lo único que necesitás es ganas de practicar.</p></div>
+    </details>
+    <details>
+      <summary>¿Es terapia?</summary>
+      <div class="inner"><p>No. Es un espacio de aprendizaje y práctica para reprogramar creencias. No reemplaza la ayuda médica ni psicológica.</p></div>
+    </details>
   </section>
 
   <!-- CIERRE -->
