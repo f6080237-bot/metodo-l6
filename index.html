@@ -13,8 +13,8 @@
 <style>
 /* Layout: una sola columna estrecha, como un grimorio; el ojo abre la página y todo desciende desde él. Tema oscuro único, a propósito. */
 :root {
-  --bg: #1a0824;          /* violeta oscuro intenso */
-  --bg-raise: #2a0f36;    /* superficie elevada, violeta */
+  --bg: #0a080b;          /* negro con sesgo ciruela */
+  --bg-raise: #17101c;    /* superficie elevada, apenas violeta */
   --ink: #f3ebe4;         /* hueso */
   --muted: #bba7c2;       /* malva */
   --silver: #dccde6;      /* plata lila: el acento */
@@ -35,7 +35,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  background: linear-gradient(180deg, #2e0c40 0%, var(--bg) 30%, #33091f 60%, #22082e 80%, #300a1d 100%);
+  background: var(--bg);
   background-color: var(--bg);
   color: var(--ink);
   font-family: var(--font-body);
@@ -50,9 +50,9 @@ body::after { /* bruma de fondo */
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(60vmax 40vmax at 50% -10%, rgba(122, 24, 56, 0.65), transparent 70%),
-    radial-gradient(45vmax 35vmax at 0% 60%, rgba(78, 24, 120, 0.55), transparent 70%),
-    radial-gradient(40vmax 30vmax at 100% 100%, rgba(122, 24, 56, 0.5), transparent 70%);
+    radial-gradient(60vmax 40vmax at 50% -10%, rgba(140, 20, 60, 0.6), transparent 70%),
+    radial-gradient(45vmax 35vmax at 0% 65%, rgba(90, 25, 140, 0.35), transparent 70%),
+    radial-gradient(40vmax 30vmax at 100% 100%, rgba(140, 20, 60, 0.35), transparent 70%);
   animation: bruma 18s ease-in-out infinite alternate;
   z-index: 0;
 }
