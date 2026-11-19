@@ -13,13 +13,14 @@
 <style>
 /* Layout: una sola columna estrecha, como un grimorio; el ojo abre la página y todo desciende desde él. Tema oscuro único, a propósito. */
 :root {
-  --bg: #0a080b;          /* negro con sesgo ciruela */
-  --bg-raise: #131016;    /* superficie levemente elevada */
-  --ink: #ebe4dc;         /* hueso */
-  --muted: #9c9199;       /* ceniza malva */
-  --silver: #c8c1cc;      /* plata vieja: el acento */
-  --wine: #4a1626;        /* vino profundo, solo para resplandor */
-  --line: rgba(200, 193, 204, 0.16);
+  --bg: #1b1220;          /* berenjena: oscuro pero no negro */
+  --bg-raise: #261a2d;    /* superficie levemente elevada, violeta */
+  --ink: #f1eae3;         /* hueso */
+  --muted: #b3a6b6;       /* malva ceniza */
+  --silver: #d6cbe0;      /* plata lila: el acento */
+  --wine: #6e1f3a;        /* bordó */
+  --violet: #4b2a6b;      /* violeta profundo */
+  --line: rgba(214, 203, 224, 0.2);
   --font-display: "Cormorant Garamond", "Garamond", "Times New Roman", serif;
   --font-label: "Cinzel", "Trajan Pro", "Times New Roman", serif;
   --font-body: "Spectral", "Georgia", serif;
@@ -34,7 +35,8 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  background: var(--bg);
+  background: linear-gradient(180deg, #2a1636 0%, var(--bg) 35%, #241020 70%, var(--bg) 100%);
+  background-color: var(--bg);
   color: var(--ink);
   font-family: var(--font-body);
   font-weight: 300;
@@ -48,10 +50,20 @@ body::after { /* bruma de fondo */
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(60vmax 40vmax at 50% -10%, rgba(74, 22, 38, 0.55), transparent 70%),
-    radial-gradient(40vmax 30vmax at 100% 100%, rgba(74, 22, 38, 0.25), transparent 70%);
+    radial-gradient(60vmax 40vmax at 50% -10%, rgba(110, 31, 58, 0.6), transparent 70%),
+    radial-gradient(45vmax 35vmax at 0% 60%, rgba(75, 42, 107, 0.45), transparent 70%),
+    radial-gradient(40vmax 30vmax at 100% 100%, rgba(110, 31, 58, 0.4), transparent 70%);
+  animation: bruma 18s ease-in-out infinite alternate;
   z-index: 0;
 }
+@keyframes bruma {
+  from { transform: translate3d(0, 0, 0) scale(1); opacity: 0.85; }
+  to { transform: translate3d(0, -3%, 0) scale(1.08); opacity: 1; }
+}
+.btn-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+.btn.alt { background: transparent; color: var(--silver); }
+.btn.alt:hover { background: var(--silver); color: var(--bg); }
+.hero .value { font-family: var(--font-display); font-size: var(--step-2); line-height: 1.25; max-width: 32rem; }
 .wrap {
   position: relative;
   z-index: 1;
@@ -232,7 +244,7 @@ ol.steps li::marker { font-family: var(--font-label); color: var(--silver); }
   .btn { width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .eye .ring, .eye .lid { animation: none; }
+  .eye .ring, .eye .lid, body::after { animation: none; }
   html { scroll-behavior: auto; }
   .btn { transition: none; }
 }
@@ -259,24 +271,49 @@ ol.steps li::marker { font-family: var(--font-label); color: var(--silver); }
     <span class="label">Comunidad de Flor</span>
     <h1>Método L6</h1>
     <p class="tagline">Manifestación con fundamento.</p>
-    <p class="lede">Reprogramá tu subconsciente entendiendo cómo funciona de verdad: psicocibernética, sistema nervioso y conciencia, explicados simple y en vivo. Para empezar a vivir una vida de la que no quieras escapar.</p>
-    <a class="btn" href="https://www.patreon.com/15482935/join" target="_blank" rel="noopener">Quiero sumarme</a>
-    <p class="fineprint">USD 37 por mes · 3 encuentros en vivo · cancelás cuando quieras</p>
+    <p class="value">Dejá de repetir la misma realidad: entendé el mecanismo y reprogramalo en vivo, una creencia por mes.</p>
+    <p class="lede">No te falta fe. Te falta mecanismo. Te explico cómo funciona de verdad tu subconsciente (psicocibernética, sistema nervioso y conciencia), simple y en vivo, y lo practicamos juntas.</p>
+    <div class="btn-row">
+      <a class="btn" href="#comunidad">Entrená en mi comunidad</a>
+      <a class="btn alt" href="#sesiones">Sesiones 1 a 1</a>
+    </div>
+    <p class="fineprint">Esto es un entrenamiento, no magia: funciona si lo practicás. Yo pongo el mecanismo; vos, la práctica.</p>
   </section>
 
-  <!-- TALLER GRATIS -->
-  <section>
+  <!-- TALLER GRATIS (sacar el 22/11) -->
+  <section id="taller">
     <div class="event stack center">
       <span class="label">Taller gratis en vivo</span>
+      <h2>La realidad como espejismo</h2>
       <p class="when">Viernes 20 de noviembre</p>
       <div class="times" aria-label="Horario por país">
-        <span><b>20 h</b> Argentina</span>
+        <span><b>20 h</b> Argentina y Chile</span>
         <span><b>19 h</b> Venezuela</span>
         <span><b>18 h</b> Colombia y Perú</span>
+        <span><b>17 h</b> México</span>
         <span><b>00 h</b> España</span>
       </div>
       <p>Seguime gratis en Patreon y entrá a la clase desde la publicación.</p>
       <a class="ghost" href="https://www.patreon.com/flor_cuanticaa/posts/clase-gratuita-175270628" target="_blank" rel="noopener">Ver la clase gratuita →</a>
+    </div>
+  </section>
+
+  <!-- DICIEMBRE (se muestra el 22/11: sacar "hidden") -->
+  <section id="diciembre" hidden>
+    <div class="event stack center">
+      <span class="label">Diciembre en Método L6</span>
+      <h2>El dinero como espejo del autoconcepto</h2>
+      <p class="tagline">En 3 domingos descubrís el número que te frena con la plata y empezás a subirlo.</p>
+      <p>No tenés un problema de plata: tenés una imagen de vos que le pone techo. Por eso ganás más y se va, o nunca termina de llegar. En diciembre lo trabajamos de raíz.</p>
+      <ul class="marks" style="text-align: left;">
+        <li><strong>Domingo 6 · Taller.</strong> No es la plata, es tu imagen de vos: el termostato que te devuelve siempre al mismo número.</li>
+        <li><strong>Domingo 13 · Práctica.</strong> Las frases sobre la plata que heredaste de tu casa, y cómo reescribirlas.</li>
+        <li><strong>Domingo 20 · Preguntas y cierre del año.</strong> Tus dudas, casos reales y un SATS en vivo para 2027.</li>
+      </ul>
+      <p><strong>Tu día 1:</strong> un reto de 7 días para arrancar, con un rampage cada mañana y el teatro mental de la abundancia cada noche. Además, SATS de dinero, afirmaciones de identidad y un ejercicio nuevo cada semana.</p>
+      <p class="when">Arrancamos el domingo 6 de diciembre · 16 h 🇦🇷</p>
+      <a class="btn" href="https://www.patreon.com/15482935/join" target="_blank" rel="noopener">Quiero estar desde el inicio</a>
+      <p class="fineprint">Las primeras 5 personas que se sumen antes del 6/12 reciben una sesión individual de 30 minutos de regalo.</p>
     </div>
   </section>
 
@@ -303,12 +340,18 @@ ol.steps li::marker { font-family: var(--font-label); color: var(--silver); }
   </section>
 
   <!-- QUÉ VAS A ENCONTRAR -->
-  <section class="stack">
+  <section class="stack" id="comunidad">
     <span class="label">Qué vas a encontrar</span>
     <h2>Un entorno de práctica continua, con acompañamiento real.</h2>
     <div class="main-offer stack">
-      <p class="big">3 encuentros en vivo por Zoom al mes</p>
-      <p>Una clase y dos encuentros de apoyo en formato taller, para practicar herramientas concretas, sintonizar en frecuencia y trabajar procesos en directo. Es el corazón del método: claridad, dirección y contención con mi guía directa.</p>
+      <p class="big">Cada mes, una creencia raíz. Tres domingos en vivo.</p>
+      <p>Los encuentros son por Zoom, los domingos a las 16 h de Argentina, y quedan grabados.</p>
+      <ul class="marks">
+        <li><strong>1º domingo · Taller del mes.</strong> Te explico el mecanismo: por qué tu subconsciente sostiene esa creencia. Ejercicio en vivo y la herramienta del mes.</li>
+        <li><strong>2º domingo · Práctica de desprogramación.</strong> Detectamos la creencia y la reescribimos juntas, con práctica guiada.</li>
+        <li><strong>3º domingo · Preguntas y respuestas.</strong> Respondo tus dudas y trabajamos casos reales.</li>
+      </ul>
+      <p>Es el corazón del método: claridad, dirección y contención con mi guía directa. Y si querés más, estoy en vivo en TikTok casi todos los días.</p>
     </div>
     <div class="offer-list">
       <div>
@@ -369,7 +412,7 @@ ol.steps li::marker { font-family: var(--font-label); color: var(--silver); }
   <section class="stack center" id="sumarme">
     <span class="label">Tu lugar en Método L6</span>
     <p class="price">USD 37 <small>/ mes</small></p>
-    <p>Encuentros en vivo, audios, contenido y comunidad. Cancelás cuando quieras.</p>
+    <p>3 encuentros en vivo por mes, audios, ejercicios semanales y comunidad. Lo de los meses anteriores queda disponible mientras seas parte. Cancelás cuando quieras.</p>
     <a class="btn" href="https://www.patreon.com/15482935/join" target="_blank" rel="noopener">Quiero sumarme</a>
     <p class="fineprint">Si usás iPhone, sumate desde la computadora o desde el navegador. Desde la app de Apple se suma un recargo.</p>
   </section>
@@ -391,7 +434,7 @@ ol.steps li::marker { font-family: var(--font-label); color: var(--silver); }
   </section>
 
   <!-- SESIONES 1 A 1 -->
-  <section class="stack">
+  <section class="stack" id="sesiones">
     <span class="label">Aparte de la comunidad</span>
     <h2>Sesiones individuales</h2>
     <p>Vamos a mirar juntas las limitaciones y creencias que pueden estar bloqueando tu potencial o tu manifestación. Te explico qué herramientas usar en tu caso, para que sepas por dónde empezar.</p>
