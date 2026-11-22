@@ -276,7 +276,6 @@ ol.steps li::marker { font-family: var(--font-label); color: var(--silver); }
     <div class="btn-row">
       <a class="btn" href="#comunidad">Entrená en mi comunidad</a>
       <a class="btn alt" href="#sesiones">Sesiones 1 a 1</a>
-      <a class="btn alt" href="#taller">Clase gratuita · vie 20 h</a>
     </div>
     <p class="fineprint">Esto es un entrenamiento, no magia: funciona si lo practicás. Yo pongo el mecanismo; vos, la práctica.</p>
   </section>
@@ -291,12 +290,14 @@ ol.steps li::marker { font-family: var(--font-label); color: var(--silver); }
     </div>
   </section>
 
-  <!-- TALLER GRATIS (sacar el 22/11) -->
+  <!-- TALLER PAGO DE DINERO (sacar el 5/12) -->
   <section id="taller">
     <div class="event stack center">
-      <span class="label">Taller gratis en vivo</span>
-      <h2>La realidad como espejismo</h2>
-      <p class="when">Viernes 20 de noviembre · 20 h 🇦🇷</p>
+      <span class="label">Taller en vivo · dinero</span>
+      <h2>Reprogramá tu mente con el dinero</h2>
+      <p class="tagline">No se trata de controlar tu plata. Se trata de ordenar tu mundo interno. Desde la paz, el dinero llega.</p>
+      <p>No te falta ganar más: te falta que tu cuerpo se sienta a salvo teniendo más. En 40 minutos te muestro cómo se reprograma la mente con el dinero, de verdad, y lo practicamos.</p>
+      <p class="when">Viernes 4 de diciembre · 20 h 🇦🇷</p>
       <div class="times" aria-label="Horario por país">
         <span><b>20 h</b> Argentina y Chile</span>
         <span><b>19 h</b> Venezuela</span>
@@ -304,8 +305,26 @@ ol.steps li::marker { font-family: var(--font-label); color: var(--silver); }
         <span><b>17 h</b> México</span>
         <span><b>00 h</b> España</span>
       </div>
-      <p>Seguime gratis en Patreon y entrá a la clase desde la publicación.</p>
-      <a class="ghost" href="https://www.patreon.com/flor_cuanticaa/posts/clase-gratuita-175270628" target="_blank" rel="noopener">Ver la clase gratuita →</a>
+      <p><strong>De regalo:</strong> una visualización guiada para que sigas practicando en casa.</p>
+      <div class="pay" style="text-align: left;">
+        <div>
+          <span class="label">Desde Argentina</span>
+          <p class="price" style="font-size: var(--step-3);">$15.000</p>
+          <p>Transferencia al alias:</p>
+          <div class="alias">
+            <code>flor.cuantica</code>
+            <button class="copy" type="button">Copiar</button>
+          </div>
+        </div>
+        <div>
+          <span class="label">Desde el exterior</span>
+          <p class="price" style="font-size: var(--step-3);">USD 13</p>
+          <p>Pago con PayPal:</p>
+          <a class="ghost" href="https://www.paypal.com/ncp/payment/33R3LCSP78A56" target="_blank" rel="noopener">Pagar con PayPal →</a>
+        </div>
+      </div>
+      <p>Después del pago, enviá el comprobante por WhatsApp y te mando el link del taller.</p>
+      <a class="btn" href="https://wa.link/4g3qh7" target="_blank" rel="noopener">Enviar comprobante por WhatsApp</a>
     </div>
   </section>
 
@@ -516,19 +535,21 @@ ol.steps li::marker { font-family: var(--font-label); color: var(--silver); }
 </div>
 
 <script>
-  document.getElementById('copy-alias').addEventListener('click', function () {
-    var btn = this;
-    var text = document.getElementById('alias').textContent;
-    function done() { btn.textContent = 'Copiado'; setTimeout(function () { btn.textContent = 'Copiar'; }, 1800); }
-    function fallback() {
-      var r = document.createRange();
-      r.selectNodeContents(document.getElementById('alias'));
-      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
-      btn.textContent = 'Seleccionado';
-    }
-    try {
-      navigator.clipboard.writeText(text).then(done, fallback);
-    } catch (e) { fallback(); }
+  document.querySelectorAll('button.copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var code = btn.parentNode.querySelector('code');
+      var text = code.textContent;
+      function done() { btn.textContent = 'Copiado'; setTimeout(function () { btn.textContent = 'Copiar'; }, 1800); }
+      function fallback() {
+        var r = document.createRange();
+        r.selectNodeContents(code);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        btn.textContent = 'Seleccionado';
+      }
+      try {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } catch (e) { fallback(); }
+    });
   });
 </script>
 
